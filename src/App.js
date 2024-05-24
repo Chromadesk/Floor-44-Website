@@ -1,33 +1,60 @@
+import { Container, Row, Col, Navbar, NavLink, NavbarBrand, NavbarCollapse } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import logo from './floor44logo.png'
+
 function NavBar() {
   return (
-    <div className="NavBar">
-      <label><h3>Floor44</h3></label>
-      <label>ABOUT</label>
-      <label>MENU</label>
-    </div>
+    <Navbar data-bs-theme="dark" expand='lg'>
+      <Container fluid>
+        <NavbarCollapse>
+          <NavbarBrand><img
+            src={logo}
+            width="200"
+            height="50"
+            className="d-inline-block align-top"
+            alt="Floor 44 Logo"
+          /></NavbarBrand>
+
+          <NavLink className='navItem'>ABOUT</NavLink>
+          <NavLink className='navItem'>MENU</NavLink>
+        </NavbarCollapse>
+      </Container>
+    </Navbar>
   )
 }
 
 function PhotoSeparator() {
   return (
-    <div>{/* Image */}</div>
+    <div>
+      <Container fluid className="whiteSpace"></Container>
+      <Container fluid className='photoSeperator'>
+        <img alt="separator" />
+      </Container>
+      <Container fluid className="whiteSpace"></Container>
+    </div>
   )
 }
 
 function AboutSection() {
   return (
-    <div>
-      <h2>A NEW DINING EXPERIENCE</h2>
-      <p>Exhilarating to the eyes and tastebuds alike, Azia Restaurant
-        & Lounge offers bright flavors of the Far East in a surreal
-        atmosphere that marries the serenity of Asia with the flamboyance
-        of the Caribbean. Ornate asian decor and zen details open the
-        senses into setting the stage for pan-Asian fare inspired by
-        multiple traditions that transcends into something delicious for
-        just about everyone. Menu features dim sum, sushi, soups, meat &
-        seafood and favorite house specialties that pair delightfully</p>
-      <div> {/* Image */} </div>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <h2>A NEW DINING EXPERIENCE</h2>
+          <p>Exhilarating to the eyes and tastebuds alike, Azia Restaurant
+            & Lounge offers bright flavors of the Far East in a surreal
+            atmosphere that marries the serenity of Asia with the flamboyance
+            of the Caribbean. Ornate asian decor and zen details open the
+            senses into setting the stage for pan-Asian fare inspired by
+            multiple traditions that transcends into something delicious for
+            just about everyone. Menu features dim sum, sushi, soups, meat &
+            seafood and favorite house specialties that pair delightfully</p>
+        </Col>
+        <Col>
+          <img alt="Main Dining Area" />
+        </Col>
+      </Row>
+    </Container>
   )
 }
 
@@ -80,10 +107,11 @@ function PageBottom() {
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <NavBar />
       <PhotoSeparator />
       <AboutSection />
+      <Container fluid className="whiteSpace"></Container>
       <GallerySection />
       <ReviewSection />
       <PhotoSeparator />
