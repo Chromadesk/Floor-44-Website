@@ -1,4 +1,4 @@
-import { Container, Row, Col, Navbar, NavLink, NavbarBrand, NavbarCollapse } from 'react-bootstrap'
+import { Container, Row, Col, Navbar, NavLink, NavbarBrand, NavbarCollapse, Carousel, CarouselItem, Card, CardTitle, CardBody, CardFooter, CardText } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import logo from './floor44logo.png'
 
@@ -12,7 +12,7 @@ function NavBar() {
             width="200"
             height="50"
             className="d-inline-block align-top"
-            alt="Floor 44 Logo"
+            alt=""
           /></NavbarBrand>
 
           <NavLink className='navItem'>ABOUT</NavLink>
@@ -28,7 +28,7 @@ function PhotoSeparator() {
     <div>
       <Container fluid className="whiteSpace"></Container>
       <Container fluid className='photoSeperator'>
-        <img alt="separator" />
+        <img alt="" />
       </Container>
       <Container fluid className="whiteSpace"></Container>
     </div>
@@ -37,21 +37,31 @@ function PhotoSeparator() {
 
 function AboutSection() {
   return (
-    <Container>
+    <Container fluid className="paddingLG" style={{ paddingLeft: '100px', paddingRight: '100px' }}>
       <Row>
         <Col>
-          <h2>A NEW DINING EXPERIENCE</h2>
-          <p>Exhilarating to the eyes and tastebuds alike, Azia Restaurant
-            & Lounge offers bright flavors of the Far East in a surreal
-            atmosphere that marries the serenity of Asia with the flamboyance
-            of the Caribbean. Ornate asian decor and zen details open the
-            senses into setting the stage for pan-Asian fare inspired by
-            multiple traditions that transcends into something delicious for
-            just about everyone. Menu features dim sum, sushi, soups, meat &
-            seafood and favorite house specialties that pair delightfully</p>
+          <Container className="paddingLG">
+            <h2>A NEW DINING EXPERIENCE</h2>
+            <Container style={{ padding: '10px' }}>
+              <p>Exhilarating to the eyes and tastebuds alike, Azia Restaurant
+                & Lounge offers bright flavors of the Far East in a surreal
+                atmosphere that marries the serenity of Asia with the flamboyance
+                of the Caribbean. </p>
+
+              <p>Ornate asian decor and zen details open the
+                senses into setting the stage for pan-Asian fare inspired by
+                multiple traditions that transcends into something delicious for
+                just about everyone.</p>
+
+              <p>Menu features dim sum, sushi, soups, meat &
+                seafood and favorite house specialties that pair delightfully.</p>
+            </Container>
+          </Container>
         </Col>
         <Col>
-          <img alt="Main Dining Area" />
+          <Container className="paddingLG">
+            <img alt="Main Dining Area" />
+          </Container>
         </Col>
       </Row>
     </Container>
@@ -60,23 +70,30 @@ function AboutSection() {
 
 function GallerySection() {
   return (
-    <div>
-      <h2>GALLERY</h2>
-      {/* image Carousel */}
-    </div>
+    <Container fluid>
+      <h1>GALLERY</h1>
+      <img alt="" width="100%" height="400px" style={{ backgroundColor: 'white' }} />
+      <Carousel>
+        <CarouselItem>
+          {/*Automatically fill carousel with images stores in a folder*/}
+        </CarouselItem>
+      </Carousel>
+    </Container>
   )
 }
 
 function ReviewSection() {
   return (
-    <div>
-      <h2>Reviews</h2>
-      <div className="Review">
-        <h3>Title</h3>
-        <p>Body</p>
-        <label>Credit</label>
-      </div>
-    </div>
+    <Container fluid>
+      <h1>Reviews</h1>
+      <Card className="review">
+        <CardBody>
+          <CardTitle>Title</CardTitle>
+          <CardText>Body</CardText>
+        </CardBody>
+        <CardFooter>Credit</CardFooter>
+      </Card>
+    </Container>
   )
 }
 
