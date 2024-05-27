@@ -1,20 +1,14 @@
-import { Container, Row, Col, Navbar, NavLink, NavbarBrand, NavbarCollapse, Carousel, CarouselItem, Card, CardTitle, CardBody, CardFooter, CardText } from 'react-bootstrap'
+import { Container, Row, Col, Navbar, NavLink, NavbarBrand, NavbarCollapse, Carousel, CarouselItem, Card, CardTitle, CardBody, CardFooter, CardText, Nav, NavItem } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import logo from './floor44logo.png'
+import logo from './images/floor44logo.png'
+import starIcon from './images/star.png'
 
-function NavBar() {
+function HeaderNavBar() {
   return (
     <Navbar data-bs-theme="dark" expand='lg'>
       <Container fluid>
         <NavbarCollapse>
-          <NavbarBrand><img
-            src={logo}
-            width="200"
-            height="50"
-            className="d-inline-block align-top"
-            alt=""
-          /></NavbarBrand>
-
+          <NavbarBrand><img src={logo} width="200" height="50" className="d-inline-block align-top" alt="" /></NavbarBrand>
           <NavLink className='navItem'>ABOUT</NavLink>
           <NavLink className='navItem'>MENU</NavLink>
         </NavbarCollapse>
@@ -71,7 +65,7 @@ function AboutSection() {
 function GallerySection() {
   return (
     <Container fluid>
-      <h1>GALLERY</h1>
+      <h1 className='sunken'>GALLERY</h1>
       <img alt="" width="100%" height="400px" style={{ backgroundColor: 'white' }} />
       <Carousel>
         <CarouselItem>
@@ -83,49 +77,82 @@ function GallerySection() {
 }
 
 function ReviewSection() {
+  let reviews = [];
+
+  let demoReview = {
+    title: 'Review',
+    description: 'Exhilarating to the eyes and tastebuds alike, Azia Restaurant & Lounge offers bright flavors of the Far East in a surreal atmosphere that marries the serenity of Asia with the flamboyance of the Caribbean.',
+    credit: 'John Doe'
+  }
+
+  for (let i = 0; i < 3; i++) { reviews.push(demoReview) }
+
+  let allReviews = reviews.map((review, i) => {
+    return (
+      <Col style={{ paddingLeft: '50px', paddingRight: '50px' }}>
+        <img alt="" src={starIcon} width="300" height="50" className='sunken' />
+        <Card text="light" bg="danger" className='review'>
+          <CardBody>
+            <CardTitle style={{ textAlign: 'center', fontSize: '30px' }}>{review.title}</CardTitle>
+            <CardText style={{ textAlign: 'center', fontSize: '20px' }}>{review.description}</CardText>
+          </CardBody>
+          <CardFooter>{review.credit}</CardFooter>
+        </Card>
+      </Col>
+    )
+  })
+
   return (
-    <Container fluid>
+    <Container fluid style={{ padding: '50px' }}>
       <h1>Reviews</h1>
-      <Card className="review">
-        <CardBody>
-          <CardTitle>Title</CardTitle>
-          <CardText>Body</CardText>
-        </CardBody>
-        <CardFooter>Credit</CardFooter>
-      </Card>
+      <Row>{allReviews}</Row>
     </Container>
   )
 }
 
 function PageBottom() {
   return (
-    <div>
-      <h3>Floor 44</h3>
+    <Container style={{ padding: '30px' }}>
+      <NavbarBrand>
+        <img src={logo} width="200" height="50" alt="" className='center' />
+      </NavbarBrand>
 
-      <h3>Opening Hours</h3>
-      <p>Sunday - Thursday: 5pm - 12am
-        Friday - Saturday: 5pm - 1am
-        Delivery service: 5pm - 9:30pm</p>
-
-      <h3>Address</h3>
-      <p>1228 Astronomy Rd
-        44th Floor
-        Suite B
-        Philadelphia PA 11043</p>
-
-      <h3>Contact</h3>
-      <p>TEL 215-512-2418
-        yisraeleliyah@gmail.com
-        Created by Chromadesk</p>
-      <div>{/*media buttons*/}</div>
-    </div>
+      <Row style={{ padding: '30px' }}>
+        <Col className='footerCol'>
+          <h2>Opening Hours</h2>
+          <Nav className='flex-column center'>
+            <NavItem>Sunday - Thursday: 5pm - 12am</NavItem>
+            <NavItem>Friday - Saturday: 5pm - 1am</NavItem>
+            <NavItem>Delivery service: 5pm - 9:30pm</NavItem>
+          </Nav>
+        </Col>
+        <Col className='footerCol'>
+          <h2>Address</h2>
+          <Nav className='flex-column center'>
+            <NavItem>1228 Astronomy Rd</NavItem>
+            <NavItem>44th Floor</NavItem>
+            <NavItem>Suite B</NavItem>
+            <NavItem>Philadelphia PA 11043</NavItem>
+          </Nav>
+        </Col>
+        <Col className='footerCol'>
+          <h2>Contact</h2>
+          <Nav className='flex-column center'>
+            <NavItem>TEL 215-512-2418</NavItem>
+            <NavItem>yisraeleliyah@gmail.com</NavItem>
+            <NavItem>Created by Chromadesk</NavItem>
+            <NavItem>{/*media buttons*/}</NavItem>
+          </Nav>
+        </Col>
+      </Row>
+    </Container>
   )
 }
 
 function App() {
   return (
     <div>
-      <NavBar />
+      <HeaderNavBar />
       <PhotoSeparator />
       <AboutSection />
       <Container fluid className="whiteSpace"></Container>

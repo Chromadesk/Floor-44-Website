@@ -41,4 +41,26 @@ p {
   padding: 40px;
 }
 
-.review {}
+.sunken {
+  display: block;
+  margin: auto;
+  position: relative;
+  top: 20px;
+  z-index: 2;
+}
+
+.review {
+  padding: 20px;
+  border-radius: 30px !important;
+}
+
+.footerCol {
+  font-size: 20px !important;
+}
+
+.center {
+  display: block;
+  position: relative;
+  margin: auto;
+  place-content: center;
+}
