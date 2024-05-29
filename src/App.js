@@ -2,6 +2,9 @@ import { Container, Row, Col, Navbar, NavLink, NavbarBrand, NavbarCollapse, Caro
 import 'bootstrap/dist/css/bootstrap.min.css'
 import logo from './images/floor44logo.png'
 import starIcon from './images/star.png'
+import outdoorAreaPhoto from "./images/outdoorarea.jpg"
+const galleryFolder = require.context('./images/gallery', true);
+const galleryImages = galleryFolder.keys().map(image => galleryFolder(image));
 
 function HeaderNavBar() {
   return (
@@ -54,7 +57,7 @@ function AboutSection() {
         </Col>
         <Col>
           <Container className="paddingLG">
-            <img alt="Main Dining Area" />
+            <img alt="Outdoor Rooftop Dining Area" width="100%" height="100%" src={outdoorAreaPhoto} />
           </Container>
         </Col>
       </Row>
@@ -63,15 +66,26 @@ function AboutSection() {
 }
 
 function GallerySection() {
+  let images = galleryImages.map((image, i) => {
+    if (i > 4) return
+
+    return (
+      <Col style={{ padding: "3px" }}>
+        <img alt="" width='100%' height='100%' src={image} className='center' />
+      </Col>
+    )
+  })
+
   return (
-    <Container fluid>
+    <Container fluid style={{ height: '500px' }}>
       <h1 className='sunken'>GALLERY</h1>
-      <img alt="" width="100%" height="400px" style={{ backgroundColor: 'white' }} />
-      <Carousel>
-        <CarouselItem>
-          {/*Automatically fill carousel with images stores in a folder*/}
-        </CarouselItem>
-      </Carousel>
+      <div className='galleryBack'>
+        <Carousel className='center' style={{ top: '55%', msTransform: 'translateY(-50%)', transform: 'translateY(-50%)' }}>
+          <CarouselItem>
+            <Container><Row>{images}</Row></Container>
+          </CarouselItem>
+        </Carousel>
+      </div>
     </Container>
   )
 }
