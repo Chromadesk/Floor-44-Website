@@ -53,6 +53,7 @@ p {
 .review {
   padding: 20px;
   border-radius: 30px !important;
+  background-image: linear-gradient(#de3162, #8a2053);
 }
 
 .footerCol {
@@ -74,6 +75,18 @@ p {
 
 .galleryBack {
   background-image: url('images/gallery-background-image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 85%;
+}
+
+.galleryImage {
+  width: 250px;
+  height: 360px;
+}
+
+.reviewsBack {
+  background-image: url('images/bar-background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 85%;

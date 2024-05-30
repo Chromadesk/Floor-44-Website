@@ -66,24 +66,30 @@ function AboutSection() {
 }
 
 function GallerySection() {
-  let images = galleryImages.map((image, i) => {
-    if (i > 4) return
+  let j = 0
+  let imgContent = []
+  let galleryContent = galleryImages.map((image, i) => {
+    if (j === 0) { imgContent = [] }
 
-    return (
+    imgContent.push(
       <Col style={{ padding: "3px" }}>
-        <img alt="" width='100%' height='100%' src={image} className='center' />
+        <img alt="" src={image} className='galleryImage center' />
       </Col>
     )
+    j++
+
+    if (j > 4 || i + 1 === galleryImages.length) {
+      j = 0
+      return <CarouselItem><Container style={{ width: '120%' }}><Row>{imgContent}</Row></Container></CarouselItem>
+    } //Limit the amount of images in one carousel item
   })
 
   return (
-    <Container fluid style={{ height: '500px' }}>
+    <Container fluid style={{ height: '550px' }}>
       <h1 className='sunken'>GALLERY</h1>
       <div className='galleryBack'>
         <Carousel className='center' style={{ top: '55%', msTransform: 'translateY(-50%)', transform: 'translateY(-50%)' }}>
-          <CarouselItem>
-            <Container><Row>{images}</Row></Container>
-          </CarouselItem>
+          {galleryContent}
         </Carousel>
       </div>
     </Container>
@@ -105,7 +111,7 @@ function ReviewSection() {
     return (
       <Col style={{ paddingLeft: '50px', paddingRight: '50px' }}>
         <img alt="" src={starIcon} width="300" height="50" className='sunken' />
-        <Card text="light" bg="danger" className='review'>
+        <Card text="light" className='review'>
           <CardBody>
             <CardTitle style={{ textAlign: 'center', fontSize: '30px' }}>{review.title}</CardTitle>
             <CardText style={{ textAlign: 'center', fontSize: '20px' }}>{review.description}</CardText>
@@ -117,10 +123,12 @@ function ReviewSection() {
   })
 
   return (
-    <Container fluid style={{ padding: '50px' }}>
-      <h1>Reviews</h1>
-      <Row>{allReviews}</Row>
-    </Container>
+    <div className='reviewsBack'>
+      <Container fluid style={{ padding: '50px' }}>
+        <h1>REVIEWS</h1>
+        <Row>{allReviews}</Row>
+      </Container>
+    </div>
   )
 }
 
