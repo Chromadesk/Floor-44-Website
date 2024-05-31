@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import logo from './images/floor44logo.png'
 import starIcon from './images/star.png'
 import outdoorAreaPhoto from "./images/outdoorarea.jpg"
+import imageDivider from "./images/imagedivider.png"
 const galleryFolder = require.context('./images/gallery', true);
 const galleryImages = galleryFolder.keys().map(image => galleryFolder(image));
 
@@ -25,7 +26,7 @@ function PhotoSeparator() {
     <div>
       <Container fluid className="whiteSpace"></Container>
       <Container fluid className='photoSeperator'>
-        <img alt="" />
+        <img alt="" src={imageDivider} height='100%' width='100%' />
       </Container>
       <Container fluid className="whiteSpace"></Container>
     </div>
@@ -39,19 +40,24 @@ function AboutSection() {
         <Col>
           <Container className="paddingLG">
             <h2>A NEW DINING EXPERIENCE</h2>
-            <Container style={{ padding: '10px' }}>
-              <p>Exhilarating to the eyes and tastebuds alike, Azia Restaurant
-                & Lounge offers bright flavors of the Far East in a surreal
-                atmosphere that marries the serenity of Asia with the flamboyance
-                of the Caribbean. </p>
+            <Container style={{ padding: '10px', textAlign: 'center' }}>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Tristique sollicitudin nibh sit amet commodo nulla
+                facilisi nullam.</p>
 
-              <p>Ornate asian decor and zen details open the
-                senses into setting the stage for pan-Asian fare inspired by
-                multiple traditions that transcends into something delicious for
-                just about everyone.</p>
+              <p>Ultrices eros in cursus turpis massa tincidunt dui ut. Ut
+                sem nulla pharetra diam sit amet nisl. Turpis cursus in hac
+                habitasse platea dictumst quisque sagittis. Amet nisl purus
+                in mollis nunc sed id. Ipsum dolor sit amet consectetur
+                adipiscing. Imperdiet proin fermentum orci porta.
+                Cras sed felis eget velit aliquet sagittis.</p>
 
-              <p>Menu features dim sum, sushi, soups, meat &
-                seafood and favorite house specialties that pair delightfully.</p>
+              <p>Consectetur purus ut faucibus pulvinar elementum integer.
+                Pellentesque elit ullamcorper dignissim cras tincidunt
+                lobortis feugiat vivamus. Commodo nulla facilisi nullam
+                vehicula ipsum a arcu. Ornare massa eget egestas purus
+                viverra accumsan in nisl.</p>
             </Container>
           </Container>
         </Col>
@@ -101,7 +107,7 @@ function ReviewSection() {
 
   let demoReview = {
     title: 'Review',
-    description: 'Exhilarating to the eyes and tastebuds alike, Azia Restaurant & Lounge offers bright flavors of the Far East in a surreal atmosphere that marries the serenity of Asia with the flamboyance of the Caribbean.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique sollicitudin nibh sit amet commodo nulla facilisi nullam.',
     credit: 'John Doe'
   }
 
@@ -154,7 +160,7 @@ function PageBottom() {
             <NavItem>1228 Astronomy Rd</NavItem>
             <NavItem>44th Floor</NavItem>
             <NavItem>Suite B</NavItem>
-            <NavItem>Philadelphia PA 11043</NavItem>
+            <NavItem>Somewhereville CA 11043</NavItem>
           </Nav>
         </Col>
         <Col className='footerCol'>
