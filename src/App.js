@@ -88,6 +88,8 @@ function GallerySection() {
       j = 0
       return <CarouselItem><Container style={{ width: '120%' }}><Row>{imgContent}</Row></Container></CarouselItem>
     } //Limit the amount of images in one carousel item
+
+    return null
   })
 
   return (
