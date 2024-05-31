@@ -4,7 +4,7 @@ import logo from './images/floor44logo.png'
 import starIcon from './images/star.png'
 import outdoorAreaPhoto from "./images/outdoorarea.jpg"
 import imageDivider from "./images/imagedivider.png"
-const galleryFolder = require.context('./gallery/', true);
+const galleryFolder = require.context('./images/', true);
 const galleryImages = galleryFolder.keys().map(image => galleryFolder(image));
 
 function HeaderNavBar() {
