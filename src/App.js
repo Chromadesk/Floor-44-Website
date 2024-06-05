@@ -169,7 +169,7 @@ function PageBottom() {
           <h2>Contact</h2>
           <Nav className='flex-column center'>
             <NavItem>TEL 215-512-2418</NavItem>
-            <NavItem>yisraeleliyah@gmail.com</NavItem>
+            <NavItem>chromadeskart@gmail.com</NavItem>
             <NavItem>Created by Chromadesk</NavItem>
             <NavItem>{/*media buttons*/}</NavItem>
           </Nav>
