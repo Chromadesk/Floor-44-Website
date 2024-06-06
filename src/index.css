@@ -74,7 +74,7 @@ p {
 }
 
 .galleryBack {
-  background-image: url('images/gallery-background-image.jpg');
+  background-image: url('landing-page/images/gallery-background-image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 85%;
@@ -87,8 +87,16 @@ p {
 }
 
 .reviewsBack {
-  background-image: url('images/reviews-background.jpg');
+  background-image: url('landing-page/images/reviews-background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 85%;
+}
+
+.link {
+  color: white !important;
+}
+
+.link:hover {
+  color: rgb(196, 27, 140) !important;
 }
