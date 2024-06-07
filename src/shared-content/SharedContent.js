@@ -9,8 +9,8 @@ export function HeaderNavBar() {
             <Container fluid>
                 <NavbarCollapse>
                     <NavbarBrand><img src={logo} width="200" height="50" className="d-inline-block align-top" alt="" /></NavbarBrand>
-                    <NavLink className='navItem'>ABOUT</NavLink>
-                    <NavLink className='navItem'>MENU</NavLink>
+                    <NavLink className='navItem' href='/'>ABOUT</NavLink>
+                    <NavLink className='navItem' href='/menu'>MENU</NavLink>
                 </NavbarCollapse>
             </Container>
         </Navbar>

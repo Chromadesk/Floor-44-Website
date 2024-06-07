@@ -1,6 +1,6 @@
 import { Container, Row, Col, Nav, NavLink, NavItem } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { PhotoSeparator } from '../shared-content/SharedContent'
+import { HeaderNavBar, PageBottom, PhotoSeparator } from '../shared-content/SharedContent'
 
 class Item {
     constructor(name, desc, cost) {
@@ -97,11 +97,13 @@ function MenuPage() {
 
     return (
         <div>
+            <HeaderNavBar />
             <PhotoSeparator />
             <h1 style={{ padding: '50px' }}><b>MENU</b></h1>
             <Nav className='center'>{navLinks}</Nav>
             {menuContent}
             <Container fluid className="whiteSpace"></Container>
+            <PageBottom />
         </div>
     )
 }

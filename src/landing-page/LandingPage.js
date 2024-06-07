@@ -2,7 +2,8 @@ import { Container, Row, Col, Carousel, CarouselItem, Card, CardTitle, CardBody,
 import 'bootstrap/dist/css/bootstrap.min.css'
 import starIcon from './images/star.png'
 import outdoorAreaPhoto from "./images/outdoorarea.jpg"
-import { PhotoSeparator } from '../shared-content/SharedContent'
+import { HeaderNavBar, PageBottom, PhotoSeparator } from '../shared-content/SharedContent'
+
 const galleryFolder = require.context('./images/gallery/', true);
 const galleryImages = galleryFolder.keys().map(image => galleryFolder(image));
 
@@ -116,12 +117,14 @@ function ReviewSection() {
 function LandingPage() {
     return (
         <div>
+            <HeaderNavBar />
             <PhotoSeparator />
             <AboutSection />
             <Container fluid className="whiteSpace"></Container>
             <GallerySection />
             <ReviewSection />
             <PhotoSeparator />
+            <PageBottom />
         </div>
     );
 }
