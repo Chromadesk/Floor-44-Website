@@ -2,6 +2,9 @@ import { Container, Row, Col, Navbar, NavLink, NavbarBrand, NavbarCollapse, Nav,
 import 'bootstrap/dist/css/bootstrap.min.css'
 import logo from '../shared-images/floor44logo.png'
 import imageDivider from "../shared-images/imagedivider.png"
+import instaIcon from "../shared-images/insta.png"
+import tripIcon from "../shared-images/tripadvisor.png"
+import twitIcon from "../shared-images/twitter.png"
 
 export function HeaderNavBar() {
     return (
@@ -30,6 +33,8 @@ export function PhotoSeparator() {
 }
 
 export function PageBottom() {
+    const iconStyle = { paddingLeft: '2px', paddingRight: '2px' }
+
     return (
         <Container style={{ padding: '30px' }}>
             <NavbarBrand>
@@ -60,7 +65,11 @@ export function PageBottom() {
                         <NavItem>TEL 215-512-2418</NavItem>
                         <NavItem>chromadeskart@gmail.com</NavItem>
                         <NavItem>Created by Chromadesk</NavItem>
-                        <NavItem>{/*media buttons*/}</NavItem>
+                        <NavItem>
+                            <img width='24px' height='20px' src={instaIcon} alt='' style={iconStyle} />
+                            <img width='24px' height='20px' src={twitIcon} alt='' style={iconStyle} />
+                            <img width='24px' height='20px' src={tripIcon} alt='' style={iconStyle} />
+                        </NavItem>
                     </Nav>
                 </Col>
             </Row>
