@@ -3,8 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import starIcon from './images/star.png'
 import outdoorAreaPhoto from "./images/outdoorarea.jpg"
 import { HeaderNavBar, PageBottom, PhotoSeparator } from '../shared-content/SharedContent'
+import ReviewData from '../data/ReviewData.json'
 
-const galleryFolder = require.context('./images/gallery/', true);
+const galleryFolder = require.context('../data/gallery/', true);
 const galleryImages = galleryFolder.keys().map(image => galleryFolder(image));
 
 function AboutSection() {
@@ -79,24 +80,14 @@ function GallerySection() {
 }
 
 function ReviewSection() {
-    let reviews = [];
-
-    let demoReview = {
-        title: 'Review',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique sollicitudin nibh sit amet commodo nulla facilisi nullam.',
-        credit: 'John Doe'
-    }
-
-    for (let i = 0; i < 3; i++) { reviews.push(demoReview) }
-
-    let allReviews = reviews.map((review, i) => {
+    let allReviews = ReviewData.Reviews.map((review, i) => {
         return (
             <Col style={{ paddingLeft: '50px', paddingRight: '50px' }}>
                 <img alt="" src={starIcon} width="300" height="50" className='sunken' />
-                <Card text="light" className='review'>
+                <Card text="light" className='review' style={{ minHeight: '300px' }}>
                     <CardBody>
                         <CardTitle style={{ textAlign: 'center', fontSize: '30px' }}>{review.title}</CardTitle>
-                        <CardText style={{ textAlign: 'center', fontSize: '20px' }}>{review.description}</CardText>
+                        <CardText style={{ textAlign: 'center', fontSize: '20px' }}>{review.content}</CardText>
                     </CardBody>
                     <CardFooter>{review.credit}</CardFooter>
                 </Card>

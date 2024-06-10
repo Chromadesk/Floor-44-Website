@@ -1,7 +1,12 @@
+@font-face {
+  font-family: 'Raleway';
+  src: url('fonts/Raleway-Thin.ttf');
+}
+
 body {
   background-color: black !important;
   color: white !important;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Raleway', 'Segoe UI', Verdana, sans-serif !important;
 }
 
 h1 {

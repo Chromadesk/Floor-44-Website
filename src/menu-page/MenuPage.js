@@ -1,60 +1,7 @@
 import { Container, Row, Col, Nav, NavLink, NavItem } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { HeaderNavBar, PageBottom, PhotoSeparator } from '../shared-content/SharedContent'
-
-class Item {
-    constructor(name, desc, cost) {
-        this.name = name
-        this.desc = desc
-        this.cost = cost
-    }
-}
-
-class Category {
-    constructor(title, items) {
-        this.title = title
-        this.items = items
-    }
-}
-
-const MenuCategories = [
-    new Category('Appetizers',
-        [
-            new Item("Fire Roasted Brussels Sprouts", "Caramel Vinaigrette, Mandarin Wedges", 16),
-            new Item("Hot Honey Cauliflower Bites", "Garlic Ranch Dip", 14),
-            new Item("Chicken Lettuce Wrap", "Chicken Thigh, Iceberg Lettuce, Carrot", 14),
-            new Item("Mozzarella Sticks", "Crispy Outside, Marinara Sauce", 15),
-            new Item("Crispy Cheese Bites", "Buttermilk Ranch, Firecracker Mayo", 16),
-        ]
-    ),
-    new Category('Drinks',
-        [
-            new Item("Black Manhattan", "Bulleit Rye Whiskey, Amara Averna, Orange Bitters", 15),
-            new Item("Parlor Trick", "Four Roses Bourbon Small Batch, Simple Syrup, splash of Soda Water", 15),
-            new Item("The Conjurita", "el Mayor Blanco Tequila, Cointreau Liqueur, Simple Syrup, Lime Juice", 15),
-            new Item("The Prospector", "Buffalo Trace Bourbon, Madagascar Vanilla, Honey, Lemon", 15),
-            new Item("Midsummer Night", "Ketel One Botanicals, Licor 43, Strawberry, Lime", 15),
-            new Item("Cosmopolitan", "Tito's Vodka, Orange Liqueur, Cranberr y, Lime", 15),
-        ]
-    ),
-    new Category('Entrees',
-        [
-            new Item("8 Oz Top Sirloin", "Served with garlic mashed potatoes and broccoli.", 21),
-            new Item("Glazed Baby Back Ribs", "With Honey BBQ sauce or Sweet Asian Chile sauce", 24),
-            new Item("Chicken Tenders Platter", "Served with fries", 24),
-            new Item("Clubhouse Grille", "Served with fries", 18),
-            new Item("Whisky Bacon Burger", "All Beef, Turkey Bacon", 18),
-        ]
-    ),
-    new Category('Deserts',
-        [
-            new Item("Tiramisú", "Classic Tiramisú with Caramel", 14),
-            new Item("Cereal Milk Cheesecake", "Wild Berries & Crunchy Cereal", 14),
-            new Item("Mochi Ice Cream", "Velvety Ice Cream in Japanese Mocha Shell", 14),
-            new Item("Banana Tempura", "Fried & Crispy Tempura Dipped Banana", 14),
-        ]
-    ),
-]
+import MenuData from '../data/MenuData.json'
 
 function CategoryPart(props) {
     let j = 0
@@ -65,8 +12,8 @@ function CategoryPart(props) {
         rowContent.push(
             <Col md={4}><Container style={{ paddingLeft: '10px', paddingRight: '10px' }}>
                 <h3>{item.name}</h3>
-                <p style={{ fontSize: '16px' }}>{item.desc}</p>
-                <p>${item.cost}</p>
+                <p style={{ fontSize: '16px' }}>{item.description}</p>
+                <p>${item.price}</p>
                 <br />
                 <hr />
             </Container></Col>
@@ -94,7 +41,7 @@ function CategoryPart(props) {
 
 function MenuPage() {
     const navLinks = []
-    let menuContent = MenuCategories.map((category) => {
+    let menuContent = MenuData.MenuCategories.map((category) => {
         navLinks.push(
             <NavItem><NavLink href={'#' + category.title} className='link'>
                 <i>{category.title}</i>
