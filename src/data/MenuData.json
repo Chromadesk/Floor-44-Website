@@ -1,0 +1,124 @@
+{
+    "MenuCategories": [
+        {
+            "title": "Appetizers",
+            "items": [
+                {
+                    "name": "Fire Roasted Brussels Sprouts",
+                    "description": "Caramel Vinaigrette, Mandarin Wedges",
+                    "price": 16
+                },
+                {
+                    "name": "Hot Honey Cauliflower Bites",
+                    "description": "Garlic Ranch Dip",
+                    "price": 14
+                },
+                {
+                    "name": "Chicken Lettuce Wrap",
+                    "description": "Chicken Thigh, Iceberg Lettuce, Carrot",
+                    "price": 14
+                },
+                {
+                    "name": "Mozzarella Sticks",
+                    "description": "Crispy Outside, Marinara Sauce",
+                    "price": 15
+                },
+                {
+                    "name": "Crispy Cheese Bites",
+                    "description": "Buttermilk Ranch, Firecracker Mayo",
+                    "price": 16
+                }
+            ]
+        },
+        {
+            "title": "Drinks",
+            "items": [
+                {
+                    "name": "Black Manhattan",
+                    "description": "Bulleit Rye Whiskey, Amara Averna, Orange Bitters",
+                    "price": 15
+                },
+                {
+                    "name": "Parlor Trick",
+                    "description": "Four Roses Bourbon Small Batch, Simple Syrup, splash of Soda Water",
+                    "price": 15
+                },
+                {
+                    "name": "The Conjurita",
+                    "description": "el Mayor Blanco Tequila, Cointreau Liqueur, Simple Syrup, Lime Juice",
+                    "price": 15
+                },
+                {
+                    "name": "The Prospector",
+                    "description": "Buffalo Trace Bourbon, Madagascar Vanilla, Honey, Lemon",
+                    "price": 15
+                },
+                {
+                    "name": "Midsummer Night",
+                    "description": "Ketel One Botanicals, Licor 43, Strawberry, Lime",
+                    "price": 15
+                },
+                {
+                    "name": "Cosmopolitan",
+                    "description": "Tito's Vodka, Orange Liqueur, Cranberry, Lime",
+                    "price": 15
+                }
+            ]
+        },
+        {
+            "title": "Entrees",
+            "items": [
+                {
+                    "name": "8 Oz Top Sirloin",
+                    "description": "Served with garlic mashed potatoes and broccoli.",
+                    "price": 21
+                },
+                {
+                    "name": "Glazed Baby Back Ribs",
+                    "description": "With Honey BBQ sauce or Sweet Asian Chile sauce",
+                    "price": 24
+                },
+                {
+                    "name": "Chicken Tenders Platter",
+                    "description": "Served with fries",
+                    "price": 24
+                },
+                {
+                    "name": "Clubhouse Grille",
+                    "description": "Served with fries",
+                    "price": 18
+                },
+                {
+                    "name": "Whisky Bacon Burger",
+                    "description": "All Beef, Turkey Bacon",
+                    "price": 18
+                }
+            ]
+        },
+        {
+            "title": "Deserts",
+            "items": [
+                {
+                    "name": "Tiramisú",
+                    "description": "Classic Tiramisú with Caramel",
+                    "price": 14
+                },
+                {
+                    "name": "Cereal Milk Cheesecake",
+                    "description": "Wild Berries & Crunchy Cereal",
+                    "price": 14
+                },
+                {
+                    "name": "Mochi Ice Cream",
+                    "description": "Velvety Ice Cream in Japanese Mocha Shell",
+                    "price": 14
+                },
+                {
+                    "name": "Banana Tempura",
+                    "description": "Fried & Crispy Tempura Dipped Banana",
+                    "price": 14
+                }
+            ]
+        }
+    ]
+}
